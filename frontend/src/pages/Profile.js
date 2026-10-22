@@ -148,7 +148,7 @@ const Profile = () => {
   const fetchUserProfile = async (token) => {
     try {
       const response = await axios.get(
-        'http://localhost:5000/api/auth/profile',
+        'https://national-scheme-portal.onrender.com/api/auth/profile',
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -223,7 +223,7 @@ const Profile = () => {
       };
 
       const response = await axios.put(
-        `http://localhost:5000/api/auth/update/${user.id}`,
+        `https://national-scheme-portal.onrender.com/api/auth/update/${user.id}`,
         updateData,
         {
           headers: {
@@ -325,7 +325,7 @@ const Profile = () => {
       const token = localStorage.getItem('token');
 
       const response = await axios.put(
-        `http://localhost:5000/api/auth/change-password/${user.id}`,
+        `https://national-scheme-portal.onrender.com/api/auth/change-password/${user.id}`,
         {
           current_password:
             passwordData.current_password,
@@ -390,7 +390,7 @@ const Profile = () => {
     }
 
     try {
-      const optionsRes = await fetch('http://localhost:5000/api/auth/passkey/register/options', {
+      const optionsRes = await fetch('https://national-scheme-portal.onrender.com/api/auth/passkey/register/options', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: user.email })
@@ -405,7 +405,7 @@ const Profile = () => {
 
       const regResponse = await startRegistration(optionsData);
 
-      const verifyRes = await fetch('http://localhost:5000/api/auth/passkey/register/verify', {
+      const verifyRes = await fetch('https://national-scheme-portal.onrender.com/api/auth/passkey/register/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -75,7 +75,7 @@ function Login() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: normalizedEmail, password })
@@ -114,7 +114,7 @@ function Login() {
         console.warn('Could not get idToken:', tokenErr);
       }
 
-      const response = await fetch('http://localhost:5000/api/auth/google-login', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/google-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -163,7 +163,7 @@ function Login() {
     setSocialLoading('passkey');
 
     try {
-      const optionsRes = await fetch('http://localhost:5000/api/auth/passkey/login/options', {
+      const optionsRes = await fetch('https://national-scheme-portal.onrender.com/api/auth/passkey/login/options', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({ email: normalizedEmail })
@@ -191,7 +191,7 @@ function Login() {
         return;
       }
 
-      const verifyRes = await fetch('http://localhost:5000/api/auth/passkey/login/verify', {
+      const verifyRes = await fetch('https://national-scheme-portal.onrender.com/api/auth/passkey/login/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({

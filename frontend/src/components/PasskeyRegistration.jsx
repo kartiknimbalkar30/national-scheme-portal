@@ -11,7 +11,7 @@ const PasskeyRegistration = ({ email }) => {
 
         try {
             // Step 1: Get registration options
-            const optionsRes = await fetch('http://localhost:5000/api/auth/passkey/register/options', {
+            const optionsRes = await fetch('https://national-scheme-portal.onrender.com/api/auth/passkey/register/options', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
@@ -28,7 +28,7 @@ const PasskeyRegistration = ({ email }) => {
             const attResp = await startRegistration(options);
 
             // Step 3: Verify registration
-            const verifyRes = await fetch('http://localhost:5000/api/auth/passkey/register/verify', {
+            const verifyRes = await fetch('https://national-scheme-portal.onrender.com/api/auth/passkey/register/verify', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

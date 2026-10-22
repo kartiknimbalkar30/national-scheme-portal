@@ -497,7 +497,7 @@ function Dashboard() {
       );
 
       const response = await fetch(
-        'http://localhost:5000/api/schemes/match',
+        'https://national-scheme-portal.onrender.com/api/schemes/match',
         {
           method: 'POST',
           headers: {
@@ -580,7 +580,7 @@ function Dashboard() {
   const fetchTrendingSchemes = async () => {
     try {
       const response = await fetch(
-        'http://localhost:5000/api/schemes/trending/top'
+        'https://national-scheme-portal.onrender.com/api/schemes/trending/top'
       );
 
       if (!response.ok) {
@@ -630,7 +630,7 @@ function Dashboard() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/saved/${schemeId}`,
+        `https://national-scheme-portal.onrender.com/api/saved/${schemeId}`,
         {
           method: 'POST',
           headers: {
@@ -682,7 +682,7 @@ function Dashboard() {
   const unsaveScheme = async (schemeId) => {
     if (!user?.id) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/saved/${schemeId}`, {
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/saved/${schemeId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: user.id })

@@ -21,7 +21,7 @@ function RecentlyViewed({ userId }) {
 
   const fetchRecentlyViewed = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/recently-viewed/${userId}`);
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/recently-viewed/${userId}`);
       const data = await response.json();
       setRecentSchemes(Array.isArray(data) ? data : []);
     } catch (err) {

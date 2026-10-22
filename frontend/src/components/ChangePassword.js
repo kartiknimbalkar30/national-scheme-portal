@@ -34,7 +34,7 @@ function ChangePassword() {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/api/auth/change-password/${user.id}`, {
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/auth/change-password/${user.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

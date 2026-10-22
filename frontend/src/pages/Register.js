@@ -126,7 +126,7 @@ function Register() {
     }
     setSendingOtp(true); // NEW: turns the button color/spinner on immediately on click
     try {
-      const response = await fetch('http://localhost:5000/api/auth/send-email-otp', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/send-email-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email })
@@ -158,7 +158,7 @@ function Register() {
       return;
     }
     try {
-      const response = await fetch('http://localhost:5000/api/auth/verify-email-otp', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/verify-email-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email, otp })
@@ -193,7 +193,7 @@ function Register() {
     }
     setSubmitting(true);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

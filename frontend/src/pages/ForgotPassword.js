@@ -27,7 +27,7 @@ function ForgotPassword() {
     setLoading(true);
     setMsg('');
     try {
-      const response = await fetch('http://localhost:5000/api/auth/forgot-password/send-otp', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/forgot-password/send-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -58,7 +58,7 @@ function ForgotPassword() {
     setLoading(true);
     setMsg('');
     try {
-      const response = await fetch('http://localhost:5000/api/auth/forgot-password/reset', {
+      const response = await fetch('https://national-scheme-portal.onrender.com/api/auth/forgot-password/reset', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp, new_password: newPassword })

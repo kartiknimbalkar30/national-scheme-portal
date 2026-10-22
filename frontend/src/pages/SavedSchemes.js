@@ -18,7 +18,7 @@ function SavedSchemes() {
         window.location.href = '/login';
         return;
       }
-      const response = await fetch(`http://localhost:5000/api/saved/${user.id}`);
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/saved/${user.id}`);
       const data = await response.json();
       setSchemes(Array.isArray(data) ? data : []);
       setLoading(false);
@@ -34,7 +34,7 @@ function SavedSchemes() {
     setRemovingId(schemeId);
     try {
       const user = JSON.parse(localStorage.getItem('user'));
-      const response = await fetch(`http://localhost:5000/api/saved/${schemeId}`, {
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/saved/${schemeId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: user.id })

@@ -68,7 +68,7 @@ function SchemeDetail() {
 
   const fetchSchemeDetail = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/schemes/${id}`);
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/schemes/${id}`);
       if (response.status === 404) {
         setNotFound(true);
         setLoading(false);
@@ -86,7 +86,7 @@ function SchemeDetail() {
 
   const fetchAvgRating = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/schemes/${id}/rating`);
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/schemes/${id}/rating`);
       const data = await response.json();
       setAvgRating(data.avgRating || 0);
       setTotalRatings(data.totalRatings || 0);
@@ -97,7 +97,7 @@ function SchemeDetail() {
 
   const fetchMyRating = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/schemes/${id}/my-rating?user_id=${userId}`);
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/schemes/${id}/my-rating?user_id=${userId}`);
       const data = await response.json();
       setMyRating(data.rating || 0);
     } catch (error) {
@@ -111,7 +111,7 @@ function SchemeDetail() {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/schemes/${id}/rate`, {
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/schemes/${id}/rate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: user.id, rating: ratingValue })
@@ -133,7 +133,7 @@ function SchemeDetail() {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/saved/${id}`, {
+      const response = await fetch(`https://national-scheme-portal.onrender.com/api/saved/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user_id: user.id })

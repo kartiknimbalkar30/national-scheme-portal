@@ -31,7 +31,7 @@ function Admin() {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/admin/stats');
+      const res = await fetch('https://national-scheme-portal.onrender.com/api/admin/stats');
       const data = await res.json();
       setStats(data);
     } catch (error) {
@@ -41,7 +41,7 @@ function Admin() {
 
   const fetchSchemes = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/admin/schemes');
+      const res = await fetch('https://national-scheme-portal.onrender.com/api/admin/schemes');
       const data = await res.json();
       setSchemes(data);
       setLoading(false);
@@ -52,7 +52,7 @@ function Admin() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/admin/users');
+      const res = await fetch('https://national-scheme-portal.onrender.com/api/admin/users');
       const data = await res.json();
       setUsers(data);
     } catch (error) {
@@ -67,7 +67,7 @@ function Admin() {
   const handleAddScheme = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/api/admin/scheme', {
+      const res = await fetch('https://national-scheme-portal.onrender.com/api/admin/scheme', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -91,7 +91,7 @@ function Admin() {
   const handleDeleteScheme = async (id) => {
     if (window.confirm('Are you sure you want to delete this scheme?')) {
       try {
-        const res = await fetch(`http://localhost:5000/api/admin/scheme/${id}`, {
+        const res = await fetch(`https://national-scheme-portal.onrender.com/api/admin/scheme/${id}`, {
           method: 'DELETE'
         });
         const data = await res.json();
