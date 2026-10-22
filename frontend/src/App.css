@@ -1,0 +1,252 @@
+/* =========================================================
+   NATIONAL SCHEME PORTAL — SOVEREIGN CIVIC DESIGN SYSTEM
+   Modern Government of India Digital Standard
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Sovereign Color Tokens */
+  --gov-navy-950: #04101E;
+  --gov-navy-900: #0A1E36;
+  --gov-navy-800: #0E2A4D;
+  --gov-navy-700: #153E70;
+  --gov-navy-600: #1E5699;
+  --gov-navy-100: #E6F0FA;
+  --gov-navy-50:  #F0F6FC;
+
+  --gov-saffron-700: #C2410C;
+  --gov-saffron-600: #EA580C;
+  --gov-saffron-500: #F97316;
+  --gov-saffron-100: #FFEDD5;
+  --gov-saffron-50:  #FFF7ED;
+
+  --gov-emerald-700: #047857;
+  --gov-emerald-600: #059669;
+  --gov-emerald-500: #10B981;
+  --gov-emerald-100: #D1FAE5;
+  --gov-emerald-50:  #ECFDF5;
+
+  --gov-blue-600: #2563EB;
+  --gov-blue-500: #3B82F6;
+  --gov-blue-100: #DBEAFE;
+  --gov-blue-50:  #EFF6FF;
+
+  /* Surfaces & Canvas */
+  --gov-bg: #F4F7FB;
+  --gov-surface: #FFFFFF;
+  --gov-surface-subtle: #F8FAFD;
+  --gov-surface-hover: #EEF3F9;
+  
+  /* Borders */
+  --gov-border: #E2E8F0;
+  --gov-border-strong: #CBD5E1;
+  --gov-border-navy: rgba(14, 42, 77, 0.12);
+
+  /* Typography Colors */
+  --gov-text-primary: #0F172A;
+  --gov-text-secondary: #334155;
+  --gov-text-muted: #64748B;
+  --gov-text-white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadows (Multi-layered elevation) */
+  --shadow-xs: 0 1px 2px rgba(10, 30, 54, 0.04);
+  --shadow-sm: 0 2px 8px rgba(10, 30, 54, 0.06), 0 1px 2px rgba(10, 30, 54, 0.04);
+  --shadow-md: 0 6px 20px rgba(10, 30, 54, 0.08), 0 2px 6px rgba(10, 30, 54, 0.04);
+  --shadow-lg: 0 14px 36px rgba(10, 30, 54, 0.12), 0 4px 12px rgba(10, 30, 54, 0.06);
+  --shadow-xl: 0 24px 54px rgba(10, 30, 54, 0.16), 0 8px 20px rgba(10, 30, 54, 0.08);
+
+  /* Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+
+  /* Animation Curves */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s var(--ease-smooth);
+  --transition-normal: 0.28s var(--ease-smooth);
+}
+
+/* =========================================================
+   BASE RESETS & DEFAULTS
+========================================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--gov-bg);
+  color: var(--gov-text-primary);
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--gov-navy-900);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gov-bg);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* =========================================================
+   GLOBAL FORM ELEMENTS
+========================================================= */
+
+input, select, textarea {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--gov-text-primary);
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--gov-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+input:hover, select:hover, textarea:hover {
+  border-color: var(--gov-border-strong);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gov-navy-700);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3.5px rgba(21, 62, 112, 0.15);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--gov-text-muted);
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+button:focus-visible {
+  outline: 2.5px solid var(--gov-navy-700);
+  outline-offset: 2px;
+}
+
+a {
+  color: var(--gov-navy-700);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--gov-saffron-600);
+}
+
+/* =========================================================
+   SOVEREIGN BADGES & PILLS
+========================================================= */
+
+.gov-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.gov-badge-navy {
+  background: var(--gov-navy-100);
+  color: var(--gov-navy-900);
+  border: 1px solid rgba(14, 42, 77, 0.15);
+}
+
+.gov-badge-saffron {
+  background: var(--gov-saffron-50);
+  color: var(--gov-saffron-700);
+  border: 1px solid rgba(234, 88, 12, 0.2);
+}
+
+.gov-badge-emerald {
+  background: var(--gov-emerald-50);
+  color: var(--gov-emerald-700);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+/* =========================================================
+   SMOOTH SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EDF2F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* =========================================================
+   KEYFRAME ANIMATIONS
+========================================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.35s var(--ease-smooth) forwards;
+}

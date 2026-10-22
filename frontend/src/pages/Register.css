@@ -1,0 +1,195 @@
+/* ============================================================
+   SOVEREIGN CITIZEN REGISTRATION STYLES
+============================================================ */
+
+.rp-container-v2 {
+  min-height: calc(100vh - 76px);
+  background-color: var(--gov-bg);
+  padding: 40px 20px 80px;
+  animation: fadeInUp 0.3s var(--ease-smooth);
+}
+
+.rp-card-v2 {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1.5px solid var(--gov-border);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  box-shadow: var(--shadow-xl);
+}
+
+.rp-header-v2 {
+  text-align: center;
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gov-border);
+}
+
+.rp-emblem-badge {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--gov-navy-950) 0%, var(--gov-navy-800) 100%);
+  color: #FFD29D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 6px 18px rgba(10, 30, 54, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.rp-header-v2 h2 {
+  font-size: 1.85rem;
+  color: var(--gov-navy-950);
+  margin-bottom: 6px;
+}
+
+.rp-header-v2 p {
+  color: var(--gov-text-muted);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+/* SECTION GROUPS */
+.rp-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--gov-navy-900);
+  margin: 28px 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--gov-border);
+}
+
+.rp-section-title svg {
+  color: var(--gov-saffron-600);
+}
+
+.rp-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.rp-field-v2 {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rp-label-v2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gov-navy-900);
+}
+
+.rp-label-icon {
+  color: var(--gov-navy-700);
+  font-size: 0.85rem;
+}
+
+.rp-required-star {
+  color: #EF4444;
+  font-weight: 800;
+}
+
+.rp-shake {
+  animation: govShakeAnim 0.45s ease-in-out;
+}
+
+/* OTP SECTION */
+.rp-otp-container {
+  background: var(--gov-navy-50);
+  border: 1.5px solid var(--gov-navy-100);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rp-otp-boxes {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.rp-otp-box {
+  width: 46px;
+  height: 52px;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  border: 1.5px solid var(--gov-border-strong);
+}
+
+.rp-otp-box:focus {
+  border-color: var(--gov-navy-700);
+  box-shadow: 0 0 0 3px rgba(21, 62, 112, 0.15);
+}
+
+.rp-otp-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rp-otp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--gov-navy-900);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.rp-otp-timer {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--gov-text-muted);
+}
+
+/* SUBMIT BUTTON */
+.rp-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(135deg, var(--gov-saffron-600), var(--gov-saffron-500));
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(234, 88, 12, 0.35);
+  margin-top: 32px;
+  transition: all var(--transition-fast);
+}
+
+.rp-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(234, 88, 12, 0.45);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .rp-card-v2 {
+    padding: 28px 20px;
+  }
+}
